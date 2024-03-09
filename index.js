@@ -127,5 +127,64 @@ console.log("--------------------------------------");
 console.log('Loop');
 // for (ค่าเริ่มต้น; เงื่อนไขที่ต้องการตรวจสอบ; การเปี่ยนแปลง) {คำสั่งต่างๆ}
 for (let i = 1; i<=12; i++) {
-    console.log(i);
+    let answer = i**2;
+    console.log(answer);
 }
+console.log('เมื่อมี continue ใน Loop');
+// continue คำสั่งที่ใช้แค่ในลูป เมื่อเจอในลูป โปรแกรมจะข้ามลูปนั้นทันที โดยไม่ทำคสั่งด้านล่าง
+for (let i = 1; i<=12; i++) {
+    if(i%2 === 0){
+        continue;
+    }
+    let answer = i**2;
+    console.log(answer);
+}
+console.log('เมื่อมี break ใน Loop');
+// break คำสั่งที่ใช้ได้แค่ในลูป เมื่อเจอในลูป โปรแกรมจะออกจากลูปนั้นทันที
+for (let i = 1; i<=12; i++) {
+    if(i%10 === 0){
+        break;
+    }
+    let answer = i**2;
+    console.log(answer);
+}
+
+console.log("--------------------------------------");
+console.log('Function');
+// function ชื่อฟังก์ชั่น (parameter1,...) {คำสั่งต่างๆ}
+function getPyramidArea (length , width , height) {
+    // การใช้ Parameter ถ้าไม่มีพารามิเตอร์ จะไม่สามาารถใส่ค่าอื่นได้ 
+    // จะต้องใช้ค่าที่เรากรอกให้โปรแกรมของเราไปตลอด ดั่งด้านล่าง
+    // let length = 2;
+    // let width = 2;
+    // let height = 3;
+    let baseArea = length * width;
+    let pyramidVolume = 1/3 * baseArea * height;
+    // คืนค่าไปยัง pyramidVolume
+    return pyramidVolume;
+    // console.log('ปริมาตรรูปสามเหลี่ยม = ' + pyramidVolume);
+}
+// วิธีเรียกใช้คำสั่ง
+let area1 = getPyramidArea(2 , 2 , 3);
+let area2 = getPyramidArea(4 , 4 , 3);
+console.log('area1 = ' + area1 + ' Area2 = ' + area2);
+let area3 = area1 + area2;
+console.log('area3 = ' + area3);
+console.log("--------------------------------------");
+// document คือตัวแทนเรียกของหน้า HTML
+// ('id' ที่กำหนดในหน้า HTML)
+let content2 = document.getElementById('content-2');
+let textHtml = '<b>สวัสดีจ้า</b>';
+textHtml += '<i> อิอิ </i>';
+content2.innerHTML = textHtml;
+console.log("--------------------------------------");
+let discountButton = document.getElementById('discount-button')
+let message = document.getElementById('message')
+
+function showMessage(){
+    message.innerHTML = 'หมดเวลาสนุกละสิ';
+}
+
+// addEventListener(เหตุการณ์ , คำสั่ง);
+discountButton.addEventListener('click' , showMessage);
+console.log("--------------------------------------");
