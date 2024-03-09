@@ -178,8 +178,8 @@ let textHtml = '<b>สวัสดีจ้า</b>';
 textHtml += '<i> อิอิ </i>';
 content2.innerHTML = textHtml;
 console.log("--------------------------------------");
-let discountButton = document.getElementById('discount-button')
-let message = document.getElementById('message')
+let discountButton = document.getElementById('discount-button');
+let message = document.getElementById('message');
 
 function showMessage(){
     message.innerHTML = 'หมดเวลาสนุกละสิ';
@@ -188,3 +188,28 @@ function showMessage(){
 // addEventListener(เหตุการณ์ , คำสั่ง);
 discountButton.addEventListener('click' , showMessage);
 console.log("--------------------------------------");
+
+let numberInput = document.getElementById('number-input');
+let runButton = document.getElementById('run-button');
+let output = document.getElementById('output');
+
+function printMultiply() {
+    let number = Number(numberInput.value);
+    let outputHtml = '';
+
+    if (number === 0 ){
+        output.innerHTML = 'ไม่คำนวณให้โว้ยยยยยยยยย';
+        return;
+    }
+
+    for(let i = 1; i <= 12; i++) {
+        outputNumber = number * i;
+        outputHtml += '<p>'
+        outputHtml += number + ' x ' + i + ' = ' + outputNumber;
+        outputHtml += '</p>';
+    }
+
+    output.innerHTML = outputHtml;
+}
+
+runButton.addEventListener('click' , printMultiply);
