@@ -203,9 +203,8 @@ function printMultiply() {
     }
 
     for(let i = 1; i <= 12; i++) {
-        outputNumber = number * i;
         outputHtml += '<p>'
-        outputHtml += number + ' x ' + i + ' = ' + outputNumber;
+        outputHtml += number + ' x ' + i + ' = ' + (number * i);
         outputHtml += '</p>';
     }
 
@@ -213,3 +212,27 @@ function printMultiply() {
 }
 
 runButton.addEventListener('click' , printMultiply);
+
+console.log("--------------------------------------");
+console.log('Arrow Function');
+
+function saySomething1(){
+    console.log('สวัสดีชาวโลก 1');
+}
+
+// => 
+let saySomething2 = () => {
+    console.log('สวัสดีชาวโลก 2');
+}
+
+console.log('Arrow Function');
+saySomething1();
+saySomething2();
+
+let sayButton = document.getElementById('say-button');
+let mes = document.getElementById('arrowmes');
+
+sayButton.addEventListener('click' , () => {
+    mes.innerHTML = 'หมดเวลาแล้วสิ';
+});
+console.log("--------------------------------------");
